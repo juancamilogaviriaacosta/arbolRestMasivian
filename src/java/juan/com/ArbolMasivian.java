@@ -51,14 +51,18 @@ public class ArbolMasivian {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public String putArbol(String content) {
-        JsonReader jsonReader = Json.createReader(new StringReader(content));
-        JsonObject json = jsonReader.readObject();
-        String[] split = json.getString("arbol").split(",");
-        as.setArbol(new Arbol());
-        for (String tmp : split) {
-            as.getArbol().agregar(Integer.valueOf(tmp.trim()));
+        try {
+            JsonReader jsonReader = Json.createReader(new StringReader(content));
+            JsonObject json = jsonReader.readObject();
+            String[] split = json.getString("arbol").split(",");
+            as.setArbol(new Arbol());
+            for (String tmp : split) {
+                as.getArbol().agregar(Integer.valueOf(tmp.trim()));
+            }
+            return "{\"proceso exitoso\" : \"ok\"}";
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "{\"datos de entrada erroneos\" : \"" + e.getMessage() + "\"}";
         }
-        System.out.println(as.getArbol());
-        return "{\"proceso exitoso\" : \"ok\"}";
     }
 }
