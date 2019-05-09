@@ -4,8 +4,7 @@
 
 La aplicación cuenta con 3 capas
 
-Vistas: Controladores de cada vista
-- Presentación
+- Servicios web
 - Controladores
 - Negocio
 
@@ -23,8 +22,10 @@ Para probar los servicios rest es necesario
 A continuación se muestran dos pantallazos de los métodos funcionando y probados por medio de postman
 
 PUT (ingresar el arbol)
+> Blockquote
 ![alt text](https://raw.githubusercontent.com/juancamilogaviriaacosta/arbolRestMasivian/master/web/WEB-INF/resources/put.png)
 
 GET (obtener el menor ancestro comun entre dos nodos)
+> Blockquote
 ![alt text](https://raw.githubusercontent.com/juancamilogaviriaacosta/arbolRestMasivian/master/web/WEB-INF/resources/get.png)
 
